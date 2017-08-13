@@ -2,69 +2,228 @@
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Recherche Wikipedia</title>
-	<meta charset="utf-8" />
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" crossorigin="anonymous">
+    <title>Doudou Server</title>
+    <meta charset="utf-8" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" type="text/css" title="style" href="style.css" />
 </head>
+
 <body>
-	<div class="page-header">
-		<form class="form-inline container">
-			<h1>WikiSearch</h1>
-			<label>
-				Mots-clés :
-				<input type="search" name="search" class="form-control" placeholder="Tapez votre recherche ici" />
-			</label>
-			
-		</form>
+    <div class="page-header">
+        <form class="form-inline container">
+            <h1>Doudou Server</h1>
 
-	</div>
-	
-	
-	<div class="col-sm-4" style="background-color:yellow;">
-		<div class="col-sm-1">
-		</div>
-		<div class="col-sm-10">
-			<section class="detailContainer">
-				<h2 class="page-header">Détail</h2>
-			</section>
-			<div class="panel panel-default container-fluid">
-				<div class="panel-heading row">Panel header</div>
-				<div class="panel-body row">Panel Content</div>
-				<div class="panel-footer row">
-					<div class="col-sm-4">
-					</div>
-					<div class="col-sm-4">
-						<input type="submit" class="btn btn-primary" value="envoyer"/>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-1">
-		</div>
-	</div>	
+        </form>
 
-	<div class="col-sm-8" style="background-color:pink;">
-		<div class="col-sm-1">
-		</div>
-		<div class="col-sm-10">
-			<section class="resultsContainer">
-				<h2 class="page-header">Résultats</h2>
-				<ul class="list-group results">
-
-				</ul>
-			</section>
-		</div>
-	</div>
+    </div>
 
 
+    <div class="col-sm-4">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-10">
+            <section class="detailContainer">
+                <h2 class="page-header" style="padding:10px">Ajouter des fichiers</h2>
+            </section>
+            <div class="panel panel-default container-fluid">
+                <div class="panel-heading row">
 
-	<!--<script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="stark.js"></script>
+                    <div class="col-sm-2 text-center" style="padding:0.15em;">
+
+                        <svg height="2.25em" width="2.25em" viewBox="24 0 72 72" style="vertical-align: middle;">
+
+							<path d="M60.493 72C79.883 72 96 55.882 96 36.493 96 16.118 79.882 0 60.493 0 40.118 0 24 16.118 24 36.493 24 55.883 40.118 72 60.493 72z"
+							 fill="#337ab7" fill-rule="evenodd">
+							</path>
+							<path d="M58 34h-9c-.553 0-1 .452-1 1.01v1.98c0 .567.448 1.01 1 1.01h9v9c0 .553.452 1 1.01 1h1.98c.567 0 1.01-.448 1.01-1v-9h9c.553 0 1-.452 1-1.01v-1.98c0-.567-.448-1.01-1-1.01h-9v-9c0-.553-.452-1-1.01-1h-1.98c-.567 0-1.01.448-1.01 1v9z"
+							 fill="#FFF" fill-rule="evenodd">
+							</path>
+
+						</svg>
+
+                    </div>
+
+                </div>
+                <div class="panel-body row">Panel Content</div>
+                <div class="panel-footer row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4  text-center">
+                        <input type="submit" class="btn btn-primary" value="envoyer" />
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
+
+    <div class="col-sm-8">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-10 container-fluid">
+            <section class="resultsContainer">
+                <h2 class="page-header" style="padding:10px">
+                    Liste des fichiers
+                    <div class="dropdown pull-right">
+                        <button type="button" class="btn btn-primary">Télécharger</button>
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Trier
+							<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="#">Date</a></li>
+                            <li><a href="#">Type</a></li>
+                            <li><a href="#">Nom</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Ordre croissant</a></li>
+                            <li class="active"><a href="#">Ordre déroissant</a></li>
+                        </ul>
+                    </div>
+
+                </h2>
+
+                <div class="panel panel-default container-fluid" style="padding-right:0px; padding-left:0px">
+
+                    <table class="table table-hover table-fixed">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1"></th>
+                                <th class="col-sm-3">Nom</th>
+                                <th class="col-sm-5">Type</th>
+                                <th class="col-sm-3">Taille
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr class="active">
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                            <tr>
+                                <td class="col-sm-1"> <label><input type="checkbox" value=""></label></td>
+                                <td class="col-sm-3"> John</td>
+                                <td class="col-sm-5">Doe</td>
+                                <td class="col-sm-3">john@example.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <!--<script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="stark.js"></script>
+
 
 </body>
+
 </html>
