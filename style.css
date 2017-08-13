@@ -1,0 +1,23 @@
+body{
+	height:500px
+}
+
+tr,td {
+width: 100%;
+display: inline-table;
+height:20px;              
+}
+
+table{
+ display: -moz-groupbox;    
+}
+tbody{
+  overflow-y: scroll;      
+  height: 350px;          
+  width: 100%;
+  position: absolute;
+}
+
+.container-fluid{
+	height:100%;
+}
